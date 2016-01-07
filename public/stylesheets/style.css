@@ -1,0 +1,12 @@
+#map-canvas {
+  height: 770px;
+  background-image: url("http://montco.happeningmag.com/wp-content/uploads/2013/08/night-sky-hd-wallpaper-2.jpg"); }
+
+.container {
+  margin: 0;
+  width: 100%;
+  height: 100%; }
+
+body {
+  width: 100%;
+  height: 100%; }

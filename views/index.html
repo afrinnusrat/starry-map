@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <div class = 'container'>
+      <div id = 'map-canvas'></div>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeek706Rki8AZbuxIkp8MQyl-W2r3-6lc&sensor=true"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+      function initialize_gmaps() {
+      // initialize new google maps LatLng object
+      var myLatlng = new google.maps.LatLng(40.705189,-74.009209);
+      // set the map options hash
+      var mapOptions = {
+          center: myLatlng,
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          styles: [{
+                  "elementType": "geometry.fill",
+                      "stylers": [{
+                      "visibility": "off"
+                  }]
+              }, {
+                  "featureType": "landscape.natural.landcover",
+                      "elementType": "geometry.fill",
+                      "stylers": [{
+                      "visibility": "on"
+                  }]
+              }]
+      };
+      // get the maps div's HTML obj
+      var map_canvas_obj = document.getElementById("map-canvas");
+      // initialize a new Google Map with the options
+      var map = new google.maps.Map(map_canvas_obj, mapOptions);
+      // Add the marker to the map
+      var marker = new google.maps.Marker({
+          position: myLatlng,
+          title:"Hello World!"
+      });
+      // Add the marker to the map by calling setMap()
+      marker.setMap(map);
+    }
+    $(document).ready(function() {
+        initialize_gmaps();
+    });
+    </script>
+  </body>
+</html>
